@@ -5,9 +5,9 @@ cd ../
 yes|sudo docker builder prune --all
 
 app1='{"url": "https://Sagar-ks-1996:'"$git_password"'@github.com/Sagar-ks-1996/expense_manager_frappe.git","branch": "frappe-15"}'
-app2='{"url": "https://Sagar-ks-1996:'"$git_password"'@github.com/Sagar-ks-1996/firebase_app.git","branch": "main"}'
-# export APPS_JSON='['"$app1"']'
-export APPS_JSON='['"$app1"','"$app2"']'
+# app2='{"url": "https://Sagar-ks-1996:'"$git_password"'@github.com/Sagar-ks-1996/firebase_app.git","branch": "main"}'
+export APPS_JSON='['"$app1"']'
+# export APPS_JSON='['"$app1"','"$app2"']'
 export APPS_JSON_BASE64=$(echo ${APPS_JSON} | base64 -w 0)
 
 sudo docker build \
